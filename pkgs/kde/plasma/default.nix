@@ -53,6 +53,7 @@
   plasma-nano = callPackage ./plasma-nano { };
   plasma-nm = callPackage ./plasma-nm { };
   plasma-pa = callPackage ./plasma-pa { };
+  plasma-remotecontrollers = callPackage ./plasma-remotecontrollers { };
   plasma-sdk = callPackage ./plasma-sdk { };
   plasma-setup = callPackage ./plasma-setup { };
   plasma-systemmonitor = callPackage ./plasma-systemmonitor { };
