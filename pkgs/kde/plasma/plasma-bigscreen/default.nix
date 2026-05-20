@@ -1,14 +1,24 @@
 {
   mkKdeDerivation,
-  plasma-workspace,
+  replaceVars,
   pkg-config,
+  plasma-workspace,
+  plasma-workspace-wallpapers,
   qtwebengine,
   libcec,
+  libcec_platform,
   sdl3,
 }:
 
 mkKdeDerivation {
   pname = "plasma-bigscreen";
+
+  patches = [
+    ./keyboard-desktop-path.patch
+    (replaceVars ./wallpaper-paths.patch {
+      wallpapers = "${plasma-workspace-wallpapers}/share/wallpapers";
+    })
+  ];
 
   postPatch = ''
     substituteInPlace bin/plasma-bigscreen-wayland.in \
@@ -30,10 +40,19 @@ mkKdeDerivation {
     qtwebengine
 
     libcec
+    libcec_platform
     sdl3
   ];
 
   dontQmlLint = true;
+
+  preFixup = ''
+    substituteInPlace "$out"/bin/plasma-bigscreen-common-env \
+      --replace-fail "plasma-bigscreen-envmanager" "$out/bin/plasma-bigscreen-envmanager"
+
+    substituteInPlace "$out"/bin/plasma-bigscreen-{wayland,swap-session} \
+      --replace-fail "plasma-bigscreen-common-env" "$out/bin/plasma-bigscreen-common-env"
+  '';
 
   passthru.providedSessions = [ "plasma-bigscreen-wayland" ];
 }
