@@ -37,8 +37,6 @@ self: super: with self; {
 
   aardwolf = callPackage ../development/python-modules/aardwolf { };
 
-  abjad = callPackage ../development/python-modules/abjad { };
-
   about-time = callPackage ../development/python-modules/about-time { };
 
   absl-py = callPackage ../development/python-modules/absl-py { };
@@ -2119,6 +2117,8 @@ self: super: with self; {
   bitstruct = callPackage ../development/python-modules/bitstruct { };
 
   bittensor-drand = callPackage ../development/python-modules/bittensor-drand { };
+
+  bittensor-wallet = callPackage ../development/python-modules/bittensor-wallet { };
 
   bitvavo-aio = callPackage ../development/python-modules/bitvavo-aio { };
 
@@ -7299,6 +7299,8 @@ self: super: with self; {
 
   httpcore = callPackage ../development/python-modules/httpcore { };
 
+  httpcore2 = callPackage ../development/python-modules/httpcore2 { };
+
   httpie = callPackage ../development/python-modules/httpie { };
 
   httpie-ntlm = callPackage ../development/python-modules/httpie-ntlm { };
@@ -7332,6 +7334,8 @@ self: super: with self; {
   httpx-sse = callPackage ../development/python-modules/httpx-sse { };
 
   httpx-ws = callPackage ../development/python-modules/httpx-ws { };
+
+  httpx2 = callPackage ../development/python-modules/httpx2 { };
 
   huawei-lte-api = callPackage ../development/python-modules/huawei-lte-api { };
 
@@ -11423,6 +11427,8 @@ self: super: with self; {
 
   numpy-groupies = callPackage ../development/python-modules/numpy-groupies { };
 
+  numpy-quaternion = callPackage ../development/python-modules/numpy-quaternion { };
+
   numpy-stl = callPackage ../development/python-modules/numpy-stl { };
 
   numpy-typing-compat = callPackage ../development/python-modules/numpy-typing-compat { };
@@ -11450,6 +11456,12 @@ self: super: with self; {
   nvdlib = callPackage ../development/python-modules/nvdlib { };
 
   nvidia-cutlass = callPackage ../development/python-modules/nvidia-cutlass { };
+
+  nvidia-cutlass-dsl = callPackage ../development/python-modules/nvidia-cutlass-dsl { };
+
+  nvidia-cutlass-dsl-libs-base =
+    callPackage ../development/python-modules/nvidia-cutlass-dsl-libs-base
+      { };
 
   nvidia-dlprof-pytorch-nvtx =
     callPackage ../development/python-modules/nvidia-dlprof-pytorch-nvtx
@@ -13606,6 +13618,8 @@ self: super: with self; {
 
   pybtex-docutils = callPackage ../development/python-modules/pybtex-docutils { };
 
+  pybuildkite = callPackage ../development/python-modules/pybuildkite { };
+
   pybullet = callPackage ../development/python-modules/pybullet { };
 
   pycairo = callPackage ../development/python-modules/pycairo { inherit (pkgs.buildPackages) meson; };
@@ -13855,6 +13869,8 @@ self: super: with self; {
   pydot = callPackage ../development/python-modules/pydot { inherit (pkgs) graphviz; };
 
   pydrawise = callPackage ../development/python-modules/pydrawise { };
+
+  pydriller = callPackage ../development/python-modules/pydriller { };
 
   pydrive2 = callPackage ../development/python-modules/pydrive2 { };
 

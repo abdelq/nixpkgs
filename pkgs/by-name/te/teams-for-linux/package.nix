@@ -51,6 +51,9 @@ buildNpmPackage rec {
     electron_dist="$(mktemp -d)"
     cp -r ${electron.dist}/. "$electron_dist"
     chmod -R u+w "$electron_dist"
+    electron_dist="$(mktemp -d)"
+    cp -r ${electron_41.dist}/. "$electron_dist"
+    chmod -R u+w "$electron_dist"
 
     npm exec electron-builder -- \
         --dir \
@@ -58,6 +61,8 @@ buildNpmPackage rec {
         -c.asarUnpack="**/*.node" \
         -c.electronDist="$electron_dist" \
         -c.electronVersion=${electron.version} \
+        -c.electronDist="$electron_dist" \
+        -c.electronVersion=${electron_41.version} \
         -c.mac.identity=null
 
     runHook postBuild

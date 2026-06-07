@@ -262,8 +262,8 @@ let
         mktplcRef = {
           name = "ng-template";
           publisher = "Angular";
-          version = "21.2.3";
-          hash = "sha256-Gdxw1WvMQ/t4XUfDkekIvwOsWYjmDIjGE7scsImohNc=";
+          version = "21.2.4";
+          hash = "sha256-2oTZLOQfcbqrSpEhJ0p7et/8X2JkTi4Kf2jfqVS2DKo=";
         };
         meta = {
           changelog = "https://marketplace.visualstudio.com/items/Angular.ng-template/changelog";
@@ -2855,8 +2855,8 @@ let
         mktplcRef = {
           publisher = "llvm-vs-code-extensions";
           name = "vscode-clangd";
-          version = "0.4.0";
-          hash = "sha256-A1+JaodEBWCQ5NqLkXfNqhOr8j2aFQzEofU+wseh/SY=";
+          version = "0.6.0";
+          hash = "sha256-hmoAPCp0BKB3z6z2Ai0w45RDE9v3BYupmu2A5y5OM50=";
         };
         meta = {
           description = "C/C++ completion, navigation, and insights";
@@ -3491,8 +3491,8 @@ let
         mktplcRef = {
           name = "veriloghdl";
           publisher = "mshr-h";
-          version = "1.22.2";
-          hash = "sha256-qkSBD8Mk6ow1GryitXgXx0kcLHCJeRs51VxqLQv6gac=";
+          version = "1.23.2";
+          hash = "sha256-btwEFVhvNqCnMCftSt7CS6c4lAf29N3MxBAMriKDyjg=";
         };
         meta = {
           changelog = "https://marketplace.visualstudio.com/items/mshr-h.VerilogHDL/changelog";
@@ -4222,8 +4222,8 @@ let
         mktplcRef = {
           publisher = "shd101wyy";
           name = "markdown-preview-enhanced";
-          version = "0.8.26";
-          hash = "sha256-OZMUHqc8l8BrpLONlOIeImnsJVa0TLN1R51ulQ5n8h4=";
+          version = "0.8.27";
+          hash = "sha256-v4CZul1uuNlMrIgfml9EjUy0I626GkBArNH7F+5Z/dA=";
         };
         meta = {
           description = "Provides a live preview of markdown using either markdown-it or pandoc";

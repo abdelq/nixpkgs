@@ -633,6 +633,7 @@ mapAliases {
   dogdns = throw "'dogdns' has been removed as it is unmaintained upstream and vendors insecure dependencies. Consider switching to 'doggo', a similar tool."; # Added 2025-12-31
   dolphin-emu-beta = throw "'dolphin-emu-beta' has been renamed to/replaced by 'dolphin-emu'"; # Converted to throw 2025-10-27
   done = throw "'done' has been removed as it was marked discontinued upstream since April 2024"; # Added 2026-02-07
+  dontgo403 = throw "`dontgo403` has been renamed to `nomore403`"; # Added 2026-05-24
   dontRecurseIntoAttrs = warnAlias "dontRecurseIntoAttrs has been removed from pkgs, use `lib.dontRecurseIntoAttrs` instead" lib.dontRecurseIntoAttrs; # Added 2025-10-30
   dotnetenv = throw "'dotnetenv' has been removed because it was unmaintained in Nixpkgs"; # Added 2025-07-11
   dotnetfx35 = throw "'dotnetfx35' has been removed because it was unmaintained in Nixpkgs"; # Added 2026-01-27
@@ -1172,6 +1173,8 @@ mapAliases {
   libtransmission_3 = throw "libtransmission_3 has been removed in favour of libtransmission_4. Note that upgrade caused data loss for some users so backup is recommended (see NixOS 24.11 release notes for details)"; # Converted to throw 2025-10-26
   libubox-wolfssl = throw "'libubox-wolfssl' has been removed, use 'libubox' or 'libubox-mbedtls'"; # Added 2026-03-29
   libuinputplus = throw "'libuinputplus' has been removed, as it was unmaintained upstream since 2021, no longer builds, and is no longer used by anything"; # Added 2025-11-02
+  libva1 = throw "'libva1' has been removed, as it is no longer required. Please use libva."; # Added 2026-05-14
+  libva1-minimal = throw "'libva1-minimal' has been removed, as it is no longer required. Please use libva-minimal."; # Added 2026-05-14
   libviper = throw "'libviper' was removed as it is broken and not maintained upstream"; # Added 2025-05-17
   libWindowsWM = libwindowswm; # Added 2026-01-19
   libwnck3 = throw "'libwnck3' has been renamed to/replaced by 'libwnck'"; # Converted to throw 2025-10-27
@@ -1734,6 +1737,10 @@ mapAliases {
   pocket-updater-utility = throw "'pocket-updater-utility' has been renamed to/replaced by 'pupdate'"; # Converted to throw 2025-10-27
   podofo010 = throw "'podofo010' has been renamed to/replaced by 'podofo_0_10'"; # Converted to throw 2025-10-27
   podofo_1_0 = throw "'podofo_1_0' has been deprecated in favour of 'podofo'"; # Added 2026-05-16
+  podofo010 = throw "'podofo010' has been renamed to 'podofo0'"; # Converted to throw 2025-10-27
+  podofo_0_9 = throw "'podofo_0_9' has been deprecated, it may be replaced by 'podofo0'"; # Added 2026-05-08
+  podofo_0_10 = warnAlias "'podofo_0_10' has been renamed to 'podofo0'" podofo0; # Added 2026-05-08
+  podofo_1_0 = throw "'podofo_1_0' has been deprecated in favour of 'podofo'"; # Added 2026-05-08
   polipo = throw "'polipo' has been removed as it is unmaintained upstream"; # Added 2025-05-18
   polonium = throw "'polonium' has been removed, as Plasma 5 has reached end of life."; # Added 2026-05-01
   polypane = throw "'polypane' has been removed due to lack of maintenance in nixpkgs"; # Added 2025-06-25
@@ -2609,6 +2616,8 @@ mapAliases {
   xorgserver = xorg-server; # Added 2026-02-04
   xorgsgmldoctools = xorg-sgml-doctools; # Added 2026-01-19
   xow_dongle-firmware = throw "'xow_dongle-firmware' has been renamed to/replaced by 'xone-dongle-firmware'"; # Added 2025-12-30
+  xp-pen-deco-01-v2-driver = warnAlias "'xp-pen-deco-01-v2-driver' has been replaced by 'xppen_4'. Consider using it with 'programs.xppen' module." xppen_4; # Added 2026-02-02
+  xp-pen-g430-driver = warnAlias "'xp-pen-g430-driver' has been replaced by 'xppen_3'. Consider using it with 'programs.xppen' module." xppen_3; # Added 2026-02-02
   xsw = throw "'xsw' has been removed due to lack of upstream maintenance"; # Added 2025-08-22
   xsynth-dssi = throw "'xsynth-dssi' was removed due to lack of upstream maintenance and relying on gtk2"; # Added 2025-12-02
   xtrap = throw "XTrap was a proposed X11 extension that hasn't been in Xorg since X11R6 in 1994, it is deprecated and archived upstream."; # added 2025-12-13

@@ -28,6 +28,8 @@ let
     "11" = {
       version = "11.4.0";
       hash = "sha256-50EGpaDrJWn0WDUEQg6tX8HCY+QXoyFsqxy+DM3LTq4=";
+      version = "11.3.0";
+      hash = "sha256-Wt4e9RzzZEH0oAkx6vkANlRonro2hJOfcNdXay37hHQ=";
     };
   };
 

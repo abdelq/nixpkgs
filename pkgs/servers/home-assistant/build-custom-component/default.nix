@@ -10,6 +10,8 @@ let
 
   manifestRequirementsCheckHook = import ./manifest-requirements-check-hook.nix {
     inherit makeSetupHook python3Packages;
+    inherit lib makeSetupHook;
+    inherit (home-assistant) python;
   };
 in
 

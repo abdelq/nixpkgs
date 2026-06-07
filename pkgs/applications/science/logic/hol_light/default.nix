@@ -12,6 +12,7 @@
   fmt,
   pcre2,
   ledit,
+  pcre2,
   bash,
 }:
 
@@ -27,6 +28,32 @@ let
     zarith
     pcre2
   ];
+  use_zarith = lib.versionAtLeast ocaml.version "4.14";
+  load_num =
+    if use_zarith then
+      ''
+        -I ${zarith}/lib/ocaml/${ocaml.version}/site-lib/zarith \
+        -I ${zarith}/lib/ocaml/${ocaml.version}/site-lib/stublibs \
+        -I ${pcre2}/lib/ocaml/${ocaml.version}/site-lib/stublibs \
+      ''
+    else
+      lib.optionalString (num != null) ''
+        -I ${num}/lib/ocaml/${ocaml.version}/site-lib/num \
+        -I ${num}/lib/ocaml/${ocaml.version}/site-lib/top-num \
+        -I ${num}/lib/ocaml/${ocaml.version}/site-lib/stublibs
+      '';
+
+  start_script = ''
+    #!${runtimeShell}
+    cd $out/lib/hol_light
+    export OCAMLPATH="''${OCAMLPATH-}''${OCAMLPATH:+:}${camlp5}/lib/ocaml/${ocaml.version}/site-lib/"
+    exec ${ocaml}/bin/ocaml \
+      -I \`${camlp5}/bin/camlp5 -where\` \
+      ${load_num} \
+      -I ${findlib}/lib/ocaml/${ocaml.version}/site-lib/ \
+      -I ${camlp-streams}/lib/ocaml/${ocaml.version}/site-lib/camlp-streams camlp_streams.cma \
+      -init make.ml
+  '';
 in
 
 stdenv.mkDerivation {
@@ -67,6 +94,8 @@ stdenv.mkDerivation {
     fmt
     pcre2
     zarith
+    pcre2
+    (if use_zarith then zarith else num)
   ];
 
   setupHook = writeText "hol-light-setup-hook.sh" ''

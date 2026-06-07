@@ -1,5 +1,7 @@
 {
   python3Packages,
+  lib,
+  python,
   makeSetupHook,
 }:
 
@@ -9,4 +11,5 @@ makeSetupHook {
     pythonCheckInterpreter = python3Packages.python.interpreter;
     checkManifest = ./check_manifest.py;
   };
+  meta.license = lib.licenses.mit;
 } ./manifest-requirements-check-hook.sh

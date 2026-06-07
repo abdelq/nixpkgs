@@ -41,6 +41,7 @@
   oxygen-sounds = callPackage ./oxygen-sounds { };
   plasma-activities = callPackage ./plasma-activities { };
   plasma-activities-stats = callPackage ./plasma-activities-stats { };
+  plasma-bigscreen = callPackage ./plasma-bigscreen { };
   plasma-browser-integration = callPackage ./plasma-browser-integration { };
   plasma-desktop = callPackage ./plasma-desktop { };
   plasma-dialer = callPackage ./plasma-dialer { };
@@ -53,6 +54,7 @@
   plasma-nano = callPackage ./plasma-nano { };
   plasma-nm = callPackage ./plasma-nm { };
   plasma-pa = callPackage ./plasma-pa { };
+  plasma-remotecontrollers = callPackage ./plasma-remotecontrollers { };
   plasma-sdk = callPackage ./plasma-sdk { };
   plasma-setup = callPackage ./plasma-setup { };
   plasma-systemmonitor = callPackage ./plasma-systemmonitor { };
@@ -71,6 +73,7 @@
   spacebar = callPackage ./spacebar { };
   spectacle = callPackage ./spectacle { };
   systemsettings = callPackage ./systemsettings { };
+  union = callPackage ./union { };
   wacomtablet = callPackage ./wacomtablet { };
   xdg-desktop-portal-kde = callPackage ./xdg-desktop-portal-kde { };
 }

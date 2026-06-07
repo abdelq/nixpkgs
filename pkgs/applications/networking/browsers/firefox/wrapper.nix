@@ -415,6 +415,9 @@ let
           # Disable update checks
           touch "$out/${libDir}/is-packaged-app"
 
+          # Disable update checks
+          touch $out/${libDir}/is-packaged-app
+
           cd "$out"
 
         ''

@@ -17,6 +17,8 @@
   makeDesktopItem,
   makeWrapper,
 
+  replaceVars,
+
   nixosTests,
 }:
 buildNpmPackage (finalAttrs: {
