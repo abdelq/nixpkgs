@@ -3,25 +3,24 @@
   mkKdeDerivation,
   fetchFromGitLab,
   pkg-config,
-  libcec,
   libevdev,
-  plasma-wayland-protocols,
+  libcec,
+  libcec_platform,
   plasma-workspace,
-  qtwayland,
   sdl3,
   xwiimote,
 }:
 
 mkKdeDerivation {
   pname = "plasma-remotecontrollers";
-  version = "unstable-2026-05-05";
+  version = "unstable-2026-06-06";
 
   src = fetchFromGitLab {
     domain = "invent.kde.org";
     owner = "plasma-bigscreen";
     repo = "plasma-remotecontrollers";
-    rev = "43cff966637d4adf8445558ba167f762e68f7707";
-    hash = "sha256-mArYtF0IiTmY91+d+HvXD8Sg2imqfR4s4MXtPZ+nUtc=";
+    rev = "3ee2a2a1c23759db74890e644f341a1969d4fe4f";
+    hash = "sha256-DgixSiQe4GGC4TMvtAOfEK+IJQp74f6GUu8gHPrX8wM=";
   };
 
   extraNativeBuildInputs = [
@@ -29,19 +28,11 @@ mkKdeDerivation {
   ];
 
   extraBuildInputs = [
-    libcec
     libevdev
-    plasma-wayland-protocols
-    qtwayland
+    libcec
+    libcec_platform
     sdl3
     xwiimote
-  ];
-
-  dontQmlLint = true; # FIXME: qmllint fails to resolve the KCM's nested QML import paths.
-
-  extraCmakeFlags = [
-    # FIXME: work around Qt 6.10 cmake API changes
-    "-DQT_FIND_PRIVATE_MODULES=1"
   ];
 
   postPatch = ''
@@ -52,6 +43,18 @@ mkKdeDerivation {
   '';
 
   meta = {
+    license = with lib.licenses; [
+      bsd2
+      cc0
+      gpl2Only
+      gpl2Plus
+      gpl3Only
+      lgpl2Plus
+      lgpl21Only
+      lgpl3Only
+      gpl3Plus # LicenseRef-KDE-Accepted-GPL
+      lgpl3Plus # LicenseRef-KDE-Accepted-LGPL
+    ];
     platforms = lib.platforms.linux;
   };
 }
