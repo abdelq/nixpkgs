@@ -30,6 +30,8 @@
         aciceri
       ];
     };
+    # Non-schema `queries` nesting in grammar entry
+    excludeBrokenTreeSitterJson = true;
   };
 
   alloy = {
@@ -740,6 +742,8 @@
         sei40kr
       ];
     };
+    # Non-schema `camelCase` and `external-scanner` fields
+    excludeBrokenTreeSitterJson = true;
   };
 
   gas = {
@@ -1022,6 +1026,8 @@
         aciceri
       ];
     };
+    # Slash in grammar name and non-schema top-level `tree-sitter` field
+    excludeBrokenTreeSitterJson = true;
   };
 
   groovy = {
@@ -1824,6 +1830,8 @@
     meta = {
       license = lib.licenses.mit;
     };
+    # Missing required `metadata.links`
+    excludeBrokenTreeSitterJson = true;
   };
 
   opencl = {
@@ -2200,6 +2208,8 @@
         aciceri
       ];
     };
+    # Missing required `grammars[0].name` and `metadata`
+    excludeBrokenTreeSitterJson = true;
   };
 
   r = {
@@ -2528,6 +2538,8 @@
         aciceri
       ];
     };
+    # Empty `metadata.links.funding` fails URL parsing
+    excludeBrokenTreeSitterJson = true;
   };
 
   supercollider = {
@@ -2571,9 +2583,9 @@
   };
 
   swift = rec {
-    version = "0.7.2";
+    version = "0.7.3";
     url = "github:alex-pinkus/tree-sitter-swift/${version}-with-generated-files";
-    hash = "sha256-tG+tM7B6901QP4QyJdf55V38b4XduSU1eb+gaP7BikE=";
+    hash = "sha256-SnWwqk6IRpaNldsraSKwHGtS64LiCndxDksrvLMs1P8=";
     meta = {
       license = lib.licenses.mit;
       maintainers = with lib.maintainers; [
@@ -2617,6 +2629,8 @@
         aciceri
       ];
     };
+    # Non-schema `metadata.links.homepage`
+    excludeBrokenTreeSitterJson = true;
   };
 
   talon = rec {
@@ -2971,6 +2985,8 @@
         jeafleohj
       ];
     };
+    # Relative repository URL, empty funding and author URLs
+    excludeBrokenTreeSitterJson = true;
   };
 
   wast = {
@@ -3162,10 +3178,10 @@
   };
 
   zig = {
-    version = "0-unstable-2024-10-13";
-    url = "github:maxxnino/tree-sitter-zig";
-    rev = "a80a6e9be81b33b182ce6305ae4ea28e29211bd5";
-    hash = "sha256-o3RAbW8kLSfKxuQ/z7WDb5BaDVxZUG5oFutovRkErjk=";
+    version = "1.1.2-unstable-2025-09-10";
+    url = "github:tree-sitter-grammars/tree-sitter-zig";
+    rev = "6479aa13f32f701c383083d8b28360ebd682fb7d";
+    hash = "sha256-T9Q6EhJ20tH5v1fUlnNA3UcdX52DMZE/PQjPWQtcHw0=";
     meta = {
       license = lib.licenses.mit;
     };

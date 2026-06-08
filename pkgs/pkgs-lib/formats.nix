@@ -81,6 +81,8 @@ let
       str
       ;
   };
+
+  json2x = pkgs.buildPackages.callPackage ./formats/json2x/package.nix { };
 in
 optionalAttrs allowAliases aliases
 // rec {
@@ -460,8 +462,7 @@ optionalAttrs allowAliases aliases
 
   toml =
     { }:
-    json { }
-    // {
+    {
       type = types.toml;
 
       generate =
@@ -470,15 +471,13 @@ optionalAttrs allowAliases aliases
           { runCommand, remarshal }:
           runCommand name
             {
-              nativeBuildInputs = [ remarshal ];
-              value = builtins.toJSON value;
+              nativeBuildInputs = [ json2x ];
+              inherit value;
               preferLocalBuild = true;
               __structuredAttrs = true;
             }
             ''
-              valuePath="$TMPDIR/value"
-              printf "%s" "$value" > "$valuePath"
-              json2toml "$valuePath" "$out"
+              json2x toml --unwrap value "$NIX_ATTRS_JSON_FILE" "$out"
             ''
         ) { };
 
